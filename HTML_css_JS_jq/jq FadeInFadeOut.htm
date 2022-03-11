@@ -1,0 +1,52 @@
+﻿<html>
+	<head>
+		<title>Demo JQuery</title>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				
+				$("#BtnFadeOut").attr("disabled",true);
+			
+				$("#BtnFadeIn").click(function(){
+					if(confirm("Are You Sure..??"))
+					{
+						$("#red").fadeIn(1000);
+						$("#yellow").fadeIn(2000);
+						$("#green").fadeIn(3000);
+						$("#BtnFadeOut").attr("disabled",false);
+						$(this).attr("disabled",true);
+					}
+				});
+				$("#BtnFadeOut").click(function(){
+					if(confirm("Are You Sure..??"))
+					{
+						$("#red").fadeOut(1000);
+						$("#yellow").fadeOut(2000);
+						$("#green").fadeOut(3000);
+						$("#BtnFadeIn").attr("disabled",false);
+						$(this).attr("disabled",true);
+					}
+				});
+				$("#BtnFadeToggle").click(function(){
+					if(confirm("Are You Sure..??"))
+					{
+						$("#red").fadeToggle(1000);
+						$("#yellow").fadeToggle(2000);
+						$("#green").fadeToggle(3000);
+					}
+				});
+			});
+		</script>
+		
+	</head>
+	<body>
+		<button id="BtnFadeIn">Click Me For Fade In</button>&nbsp;&nbsp;<button id="BtnFadeOut">Click Me For Fade Out</button>&nbsp;&nbsp;<button id="BtnFadeToggle">Click Me For Fade In / Out Toggle</button>
+		 <p style="font-size: 40px;"> Traffic Signal</p>
+		<div id="red" style=" height:100px;width:100px;background-color:#db0e0e;display:none;"></div><br />
+		<div id="yellow" style="height:100px;width:100px;background-color:#ffe600;display:none;"></div><br />
+		<div id="green" style="height:100px;width:100px;background-color:#5feb0e;display:none;"></div><br />
+	</body>
+
+</html>
